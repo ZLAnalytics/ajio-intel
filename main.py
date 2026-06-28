@@ -307,8 +307,8 @@ HTML_PAGE = """
 
 
 @app.get("/", response_class=HTMLResponse)
-async def index():
-    return HTML_PAGE
+async def index(request: Request):
+    return HTMLResponse(content=HTML_PAGE, status_code=200)
 
 
 @app.post("/submit")
